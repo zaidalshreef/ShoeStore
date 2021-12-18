@@ -12,7 +12,8 @@
         tools:layout="@layout/login_fragment" >
         <action
             android:id="@+id/action_loginFragment_to_onboardingFragment"
-            app:destination="@id/onboardingFragment" />
+            app:destination="@id/onboardingFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -27,5 +28,22 @@
         android:id="@+id/instruction"
         android:name="com.udacity.shoestore.Instruction.Instruction"
         android:label="fragment_instruction"
-        tools:layout="@layout/fragment_instruction" />
+        tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instruction_to_shoelistingFragment"
+            app:destination="@id/shoelistingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoelistingFragment"
+        android:name="com.udacity.shoestore.Shoelisting.ShoelistingFragment"
+        android:label="shoelisting_fragment"
+        tools:layout="@layout/shoelisting_fragment" >
+        <action
+            android:id="@+id/action_shoelistingFragment_to_shoedetailpageFragment"
+            app:destination="@id/shoedetailpageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoedetailpageFragment"
+        android:name="com.udacity.shoestore.Shoedetailpage.ShoedetailpageFragment"
+        android:label="ShoedetailpageFragment" />
 </navigation>
