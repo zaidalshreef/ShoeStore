@@ -6,15 +6,18 @@ import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel() {
 
-    private val _logon = MutableLiveData<Boolean>()
+    private val _login = MutableLiveData<Boolean>()
     val login : LiveData<Boolean>
-        get() = _logon
+        get() = _login
 
+    init {
+        _login.value = false
+    }
     fun  OnLogin(){
-        _logon.value = true
+        _login.value = true
     }
     fun  OnLoginComplete(){
-        _logon.value = false
+        _login.value = false
     }
     // TODO: Implement the ViewModel
 }

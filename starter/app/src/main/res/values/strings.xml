@@ -4,5 +4,12 @@
     <string name="Password">Password</string>
     <string name="create">create</string>
     <string name="login">login</string>
+    <string name="welcome">welcome to the shoe app</string>
+    <string name="info">this app create new shoe and add it to the list of shoe</string>
+    <string name="Instructionbutton">"Instruction"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">welcome to Instruction screen </string>
+    <string name="Instruction">create new shoe and add it to the list of shoe..</string>
+    <string name="shoelistButton">shoelist</string>
 
 </resources>

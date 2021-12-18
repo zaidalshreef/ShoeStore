@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+<data>
+    <variable
+        name="logininfo"
+        type="com.udacity.shoestore.login.LoginViewModel" />
+    
+</data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginFragment"
         android:layout_width="match_parent"
@@ -85,7 +93,7 @@
             android:shadowColor="#3D5AFE"
             android:text="@string/login"
             android:textColor="#263238"
-            android:onClick="@{}"
+            android:onClick="@{() -> logininfo.OnLogin()}"
             app:layout_constraintBaseline_toBaselineOf="@+id/login"
             app:layout_constraintEnd_toStartOf="@+id/login"
             app:layout_constraintHorizontal_bias="0.634"
@@ -102,6 +110,7 @@
             android:background="#00B0FF"
             android:fontFamily="@font/aclonica"
             android:text="@string/create"
+            android:onClick="@{() -> logininfo.OnLogin()}"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="#4E342E"
             app:layout_constraintBottom_toBottomOf="parent"
