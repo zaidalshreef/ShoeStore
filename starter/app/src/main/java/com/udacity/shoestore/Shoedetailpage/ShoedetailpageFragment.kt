@@ -6,25 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.ShoedetailpageFragmentBinding
+
 
 class ShoedetailpageFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ShoedetailpageFragment()
-    }
 
-    private lateinit var viewModel: ShoedetailpageViewModel
+
+    private lateinit var binding: ShoedetailpageFragmentBinding
+    private val viewModel: ShoedetailpageViewModel by activityViewModels()
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.shoedetailpage_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.shoedetailpage_fragment,container,false)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ShoedetailpageViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }

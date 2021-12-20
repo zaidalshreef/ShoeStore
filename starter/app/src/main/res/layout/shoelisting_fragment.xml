@@ -24,7 +24,7 @@
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/shoe_list_fragment_to_shoe_details"
+            android:id="@+id/toshoedetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
