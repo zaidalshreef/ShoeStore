@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoelistingFragmentBinding
 import com.udacity.shoestore.login.LoginFragmentDirections
+import com.udacity.shoestore.shoedetailpage.ShoedetailpageViewModel
 
 class ShoelistingFragment : Fragment() {
 
 
-    private lateinit var viewModel: ShoelistingViewModel
+    private val viewModel: ShoedetailpageViewModel by activityViewModels()
     private lateinit var binding: ShoelistingFragmentBinding
 
     override fun onCreateView(
@@ -28,6 +31,13 @@ class ShoelistingFragment : Fragment() {
         binding.toshoedetails.setOnClickListener {
             findNavController().navigate(ShoelistingFragmentDirections.actionShoelistingFragmentToShoedetailpageFragment())
         }
+
+        viewModel.shoelist.observe(viewLifecycleOwner, Observer { shoes ->
+            shoes.forEach { shoe ->
+
+            }
+        }
+        )
 
         return binding.root
     }
