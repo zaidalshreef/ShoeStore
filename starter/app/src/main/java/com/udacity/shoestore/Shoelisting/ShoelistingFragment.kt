@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.ShoeitemBinding
 import com.udacity.shoestore.databinding.ShoelistingFragmentBinding
 import com.udacity.shoestore.login.LoginFragmentDirections
 import com.udacity.shoestore.shoedetailpage.ShoedetailpageViewModel
@@ -34,6 +35,9 @@ class ShoelistingFragment : Fragment() {
 
         viewModel.shoelist.observe(viewLifecycleOwner, Observer { shoes ->
             shoes.forEach { shoe ->
+                val item = DataBindingUtil.inflate<ShoeitemBinding>(inflater,R.layout.shoeitem,container,false)
+                item.shoe = shoe
+                binding.linearLayout.addView(item.root)
 
             }
         }

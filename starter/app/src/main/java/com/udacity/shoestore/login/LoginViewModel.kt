@@ -19,5 +19,4 @@ class LoginViewModel : ViewModel() {
     fun  OnLoginComplete(){
         _login.value = false
     }
-    // TODO: Implement the ViewModel
 }

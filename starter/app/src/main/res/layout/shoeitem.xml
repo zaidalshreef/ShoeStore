@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
 
 
         <LinearLayout
@@ -13,8 +18,9 @@
                 android:id="@+id/shoename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{@string/shoe_name_item(shoe.name)}"
                 android:layout_margin="5dp"
-                android:textSize="14sp"
+                android:textSize="20sp"
                 tools:layout_editor_absoluteX="77dp"
                 tools:layout_editor_absoluteY="33dp" />
 
@@ -22,22 +28,25 @@
                 android:id="@+id/shoeSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{@string/shoe_size_number(shoe.size)}"
                 android:layout_margin="5dp"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{@string/shoe_company_item(shoe.company)}"
                 android:layout_margin="5dp"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/descrip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{@string/shoe_description_item(shoe.description)}"
                 android:layout_margin="5dp"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
 </layout>

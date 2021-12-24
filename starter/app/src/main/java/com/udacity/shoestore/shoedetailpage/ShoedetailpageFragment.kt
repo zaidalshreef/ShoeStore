@@ -26,6 +26,7 @@ class ShoedetailpageFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.shoedetailpage_fragment,container,false)
         binding.shoe = viewModel
+        binding.lifecycleOwner = this
 
 
         viewModel.complete.observe(viewLifecycleOwner, Observer { hascompleted ->

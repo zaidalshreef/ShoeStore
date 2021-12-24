@@ -4,13 +4,12 @@
     <string name="Password">Password</string>
     <string name="create">create</string>
     <string name="login">login</string>
-    <string name="welcome">welcome to the shoe app</string>
-    <string name="info">this app create new shoe and add it to the list of shoe</string>
+    <string name="welcome">welcome to the shoe store</string>
+    <string name="info">Thanks to Shoe store you can easily browse available shoes or even create new one which will be immediately visible on shoe list</string>
     <string name="Instructionbutton">"Instruction"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">welcome to Instruction screen </string>
-    <string name="Instruction">create new shoe and add it to the list of shoe..</string>
-    <string name="shoelistButton">shoelist</string>
+    <string name="hello_blank_fragment">Enjoy shoe store!</string>
+    <string name="Instruction">This is a place where you can browse list of the shoes and add new ones</string>
+    <string name="shoelistButton">shoe list</string>
     <string name="save">save</string>
     <string name="cancel">cancel</string>
     <string name="enter_description">description</string>
@@ -19,5 +18,9 @@
     <string name="name">shoe name</string>
     <string name="shoe_name_label">name</string>
     <string name="enter_company_name">company name</string>
+    <string name="shoe_size_number">Size: %.0f</string>
+    <string name="shoe_name_item"> name : %s</string>
+    <string name="shoe_company_item"> company : %s</string>
+    <string name="shoe_description_item">Description:\n%s</string>
 
 </resources>

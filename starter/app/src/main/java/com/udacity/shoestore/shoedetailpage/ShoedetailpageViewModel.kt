@@ -1,13 +1,11 @@
 package com.udacity.shoestore.shoedetailpage
 
-import android.util.Log
-import android.util.Log.INFO
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
-import java.util.logging.Level.INFO
-import kotlin.math.log
 
 class ShoedetailpageViewModel : ViewModel() {
 
@@ -16,7 +14,6 @@ class ShoedetailpageViewModel : ViewModel() {
     val size = MutableLiveData<String>()
     val desc = MutableLiveData<String>()
 
-
     private val _complete = MutableLiveData<Boolean>(false)
     val complete : LiveData<Boolean>
         get() = _complete
@@ -24,6 +21,33 @@ class ShoedetailpageViewModel : ViewModel() {
     private val _shoelist = MutableLiveData<List<Shoe>>(emptyList())
     val shoelist : LiveData<List<Shoe>>
         get() = _shoelist
+
+
+    val valid = MediatorLiveData<Boolean>().apply {
+        addSource(name){
+            value = validate()
+        }
+        addSource(company){
+            value = validate()
+    }
+        addSource(size){
+            value = validate()
+        }
+        addSource(desc){
+            value = validate()
+        }
+    }
+
+
+
+
+    private fun validate(): Boolean {
+        val name = !name.value?.trim().isNullOrEmpty()
+        val company = !company.value?.trim().isNullOrEmpty()
+        val size = !size.value?.trim().isNullOrEmpty()
+        val description = !desc.value?.trim().isNullOrEmpty()
+        return name && company && size && description
+    }
 
 
 
@@ -47,6 +71,12 @@ class ShoedetailpageViewModel : ViewModel() {
     }
 
     fun Oncomplete(){
+
+         size.value = ""
+         company.value = ""
+         name.value = ""
+         desc.value = ""
+
         _complete.value = false
     }
 
